@@ -25,17 +25,25 @@
 
 rm(list=ls())
 
+######################################################################
+### The following R packages will need to be installed for this code to run
+### The packages are: xtable, VIM, sampling, foreach, doParallel, doRNG
+### Note that these packages will also require installation of additional
+### package dependencies.
+######################################################################
+
+### Libraries used in the simulation
 library("xtable")
 library("VIM")
 library("sampling")
-#library("ks")
-library("np")
-
+#library("np")
 
 ### Libraries to facilitate parallel computing
 library(foreach)
 library(doParallel)
 library(doRNG)
+
+######################################################################
 
 starttime <- Sys.time()
 
@@ -619,7 +627,7 @@ set.seed(202506)
 doBoot <- TRUE #whether to do the bootstrap variance
 B=10                            #bootstrap sample size
 N=20000                             #population total
-iteration=50                     #simulation iteration                        
+iteration=2                     #simulation iteration                        
 beta=c(2,1.2,1,1,1)                 #True beta for "y=x beta + e"
 theta=c(0.1,0.2,0.3,0.4)          #True theta for PS, no intercept
 #theta=c(0.1,0.2,0.3,0)
@@ -633,11 +641,17 @@ x4=rchisq(N,4)+0.1*(x1+x2+x3)
 ### A measurement error version of x4 - 4 scenarios
 ### Un-comment the scenario of interest
 
+# Case 1: Classical measurement error scenario
 x4me <-  x4 + rnorm(length(x4), 0, 1)
+
+# Case 2: Downwards-biased measurement error
 #x4me <- 0.8*x4 + rnorm(length(x4), 0, 1)
+
+# Case 3: Classical measurement error scenario with larger variance
 #x4me <- x4 + rnorm(length(x4), 0 , 2)
+
+# Case 4: Non-linear x4 measurement error
 #x4me <- 10*(x4^(1/4)) + rnorm(length(x4), 0, 0.7)
-#plot(x4,x4me)
 
 #Design matrix
 X=cbind(rep(1,N),x1,x2,x3,x4)
