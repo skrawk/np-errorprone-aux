@@ -15,8 +15,17 @@ Additional parameters that can be changed include:
 * Line 627: Boolean variable to determine if bootstrap variance estimates are produced
 * Line 628: Number of bootstrap replicates
 * Line 630: Number of Monte Carlo simulations
+* Line 669: Correlation between the variable of interest $Y$ and $X\beta$
+* Line 670: Sample size of the non-probability sample
+* Line 671: Sample size of the probability sample
+
+To get Tables 1 to 4 in the paper referenced below, the user will need to:
+* Run the script by un-commenting the appropriate scenario in lines 637, 640, 643, or 646
+* Set the sample size of the non-probability sample to 2,000 or 8,000 as required
+* Set the sample size of the probability sample to 1,000
 
 Comparative Relative Bias and Relative Root Mean Square Error results are produced in the output1 dataset.  Additionally, the coverage rate and average confidence interval length for the bootstrap variance estimator are contained in the *c_rate* and *al* variables (lines 1104 and 1107).
+
 
 ## KernelSmoothing_SNAR_Scenario.R
 
@@ -34,6 +43,6 @@ Comparative Relative Bias and Relative Root Mean Square Error results are produc
 
 ## Reference
 
-The results of the simulation studies are contained in the paper:
+The results of the simulation studies from the first R script are contained in the paper:
 
 Ang, L., R. Clark, B. Loong, and A. Holmberg. 2026. "Inference for Non-Probability Samples Using Error-Prone Auxiliary Information". In submission. Pre-print available at http://arxiv.org/abs/2611.10975
