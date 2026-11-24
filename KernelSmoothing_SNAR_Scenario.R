@@ -37,6 +37,7 @@ library(doRNG)
 starttime <- Sys.time()
 
 ### Set the number of core processors to use
+### Note: Set cores=1 if you have issues running the code in parallel
 registerDoParallel(cores=4)
 
 
