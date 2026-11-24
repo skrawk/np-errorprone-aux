@@ -1057,12 +1057,11 @@ MC.variance <- MC.MSE - Bias^2
 MC.RSE <- 100*sqrt(MC.variance)/mu
 
 
-### Produce coverage rate
+### Produce coverage rate for the simulation
 c_rate <- colMeans(sim.c)
 
-### Average length of CIs
+### Average length of CIs in the simulation
 al <- colMeans(sim.al)
-
 
 
 ###################LATEX##############
