@@ -20,9 +20,14 @@ Additional parameters that can be changed include:
 * Line 671: Sample size of the probability sample
 
 To get Tables 1 to 4 in the paper referenced below, the user will need to:
-* Run the script by un-commenting the appropriate scenario in lines 637, 640, 643, or 646
+* Run the script by un-commenting the appropriate scenario:
+  * Line 637 for Table 1
+  * Line 640 for Table 2
+  * Line 643 for Table 3
+  * Line 646 for Table 4
 * Set the sample size of the non-probability sample to 2,000 or 8,000 as required
 * Set the sample size of the probability sample to 1,000
+* Set the correlation to 0.3
 * The number of Monte Carlo simulations is set to 2,000
 * The number of Bootstrap replicates is set to 50
 
