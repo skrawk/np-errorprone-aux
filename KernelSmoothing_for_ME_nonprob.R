@@ -1103,9 +1103,12 @@ MC.RSE <- 100*sqrt(MC.variance)/mu
 
 ### Produce coverage rate
 c_rate <- colMeans(sim.c)
+c_rate
 
 ### Average length of CIs
 al <- colMeans(sim.al)
+al
+
 
 ################################################
 

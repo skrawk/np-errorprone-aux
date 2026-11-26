@@ -23,6 +23,8 @@ To get Tables 1 to 4 in the paper referenced below, the user will need to:
 * Run the script by un-commenting the appropriate scenario in lines 637, 640, 643, or 646
 * Set the sample size of the non-probability sample to 2,000 or 8,000 as required
 * Set the sample size of the probability sample to 1,000
+* The number of Monte Carlo simulations is set to 2,000
+* The number of Bootstrap replicates is set to 50
 
 Comparative Relative Bias and Relative Root Mean Square Error results are produced in the output1 dataset.  Additionally, the coverage rate and average confidence interval length for the bootstrap variance estimator are contained in the *c_rate* and *al* variables (lines 1104 and 1107).
 
@@ -37,6 +39,13 @@ Simulation parameters that can be changed include:
 * Line 613: Number of bootstrap replicates
 * Line 615: Number of Monte Carlo simulations
 * Lines 620 and 621: Standard deviation of the x covariates
+
+The simulation settings we used included:
+* Set population size to 5,000
+* Set probability sample size to 1,000 and non-probability sample size to 2,500
+* Set standard deviation of the $x_1$ covariate to 0.3 or 1
+* Nunmber of simulations was 1,000
+* Number of bootstrap replicates was 50
 
 Comparative Relative Bias and Relative Root Mean Square Error results are produced in the output1 dataset.  Additionally, the coverage rate and average confidence interval length for the bootstrap variance estimator are contained in the *c_rate* and *al* variables (lines 1061 and 1064).
  
